@@ -7,6 +7,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -24,6 +26,17 @@
         Delete {
             bindings = <&kp DELETE>;
             key-positions = <29 28>;
+        };
+    };
+    
+    behaviors {
+        mo_tog: behavior_mo_tog {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mo_tog";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&tog>;
         };
     };
 
@@ -52,7 +65,7 @@
                            &kp TAB   &kp Q          &kp W              &kp F       &kp P         &kp G                          &kp J          &kp L      &kp U             &kp Y  &kp SEMICOLON                         &kp F12
  &mt LEFT_CONTROL LEFT_PARENTHESIS   &kp A          &kp R              &kp S       &kp T         &kp D                          &kp H          &kp N      &kp E             &kp I          &kp O  &mt RIGHT_CONTROL SINGLE_QUOTE
            &mt LEFT_ALT LEFT_BRACE   &kp Z          &kp X              &kp C       &kp V         &kp B  &kp C_MUTE      &none   &kp K          &kp M  &kp COMMA           &kp DOT       &kp FSLH         &mt RIGHT_ALT BACKSLASH
-                                            &kp C_AC_BACK  &kp K_APPLICATION  &kp DELETE  &kp LEFT_GUI  &kp LSHIFT  &kp SPACE   &mo 1  &kp BACKSPACE  &kp ENTER  &kp C_AC_FORWARD
+                                            &kp C_AC_BACK  &kp K_APPLICATION  &kp DELETE  &kp LEFT_GUI  &kp LSHIFT  &kp SPACE   MO_TOG(1)  &kp BACKSPACE  &kp ENTER  &kp C_AC_FORWARD
             >;
 
             sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp RIGHT LEFT>;

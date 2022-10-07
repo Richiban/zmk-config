@@ -11,9 +11,9 @@
     combos {
         compatible = "zmk,combos";
 
-        new_combo {
-            bindings = <&trans>;
-            key-positions = <1 0>;
+        Undo {
+            bindings = <&kp LEFT_CONTROL>;
+            key-positions = <13 14>;
         };
     };
 

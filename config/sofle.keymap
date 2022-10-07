@@ -12,7 +12,7 @@
         compatible = "zmk,combos";
 
         Undo {
-            bindings = <&kp LEFT_CONTROL>;
+            bindings = <&kp LC(Z)>;
             key-positions = <13 14>;
         };
     };

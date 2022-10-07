@@ -15,6 +15,16 @@
             bindings = <&kp LC(Z)>;
             key-positions = <13 14>;
         };
+
+        Backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <31 30>;
+        };
+
+        Delete {
+            bindings = <&kp DELETE>;
+            key-positions = <29 28>;
+        };
     };
 
     macros {
@@ -58,11 +68,11 @@
             //               |     |      |      |      |        |  |       |      |       |       |      |
 
             bindings = <
-                        &kp C_SLEEP     &kp F1         &kp F2     &kp F3            &kp F4     &kp F5                       &kp F6        &kp F7      &kp F8         &kp F9  &kp F10            &kp F11
-                             &trans     &trans         &trans  &kp EQUAL            &trans     &trans                       &trans        &kp HOME    &kp UP        &kp END   &trans            &kp F12
- &mt LEFT_CONTROL RIGHT_PARENTHESIS  &kp TILDE  &kp LESS_THAN  &kp MINUS  &kp GREATER_THAN  &kp GRAVE                       &kp LC(LEFT)  &kp LEFT    &kp DOWN      &kp RIGHT   &kp LC(RIGHT)     &kp LEFT_BRACKET
-       &mt LEFT_CONTROL RIGHT_BRACE     &trans         &trans   &kp PLUS            &trans     &trans  &trans  &trans  &bootloader        &kp PAGE_UP &trans  &kp PAGE_DOWN   &trans  &kp RIGHT_BRACKET
-                                                       &trans     &trans            &trans     &trans  &trans  &trans       &trans        &trans      &trans         &trans
+                        &kp C_SLEEP     &kp F1         &kp F2     &kp F3            &kp F4     &kp F5                        &kp F6       &kp F7    &kp F8         &kp F9        &kp F10            &kp F11
+                             &trans     &trans         &trans  &kp EQUAL            &trans     &trans                        &trans     &kp HOME    &kp UP        &kp END         &trans            &kp F12
+ &mt LEFT_CONTROL RIGHT_PARENTHESIS  &kp TILDE  &kp LESS_THAN  &kp MINUS  &kp GREATER_THAN  &kp GRAVE                  &kp LC(LEFT)     &kp LEFT  &kp DOWN      &kp RIGHT  &kp LC(RIGHT)   &kp LEFT_BRACKET
+       &mt LEFT_CONTROL RIGHT_BRACE     &trans         &trans   &kp PLUS            &trans     &trans  &trans  &trans   &bootloader  &kp PAGE_UP    &trans  &kp PAGE_DOWN         &trans  &kp RIGHT_BRACKET
+                                                       &trans     &trans            &trans     &trans  &trans  &trans        &trans       &trans    &trans         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;

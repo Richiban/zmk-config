@@ -15,6 +15,8 @@
 
 
 
+
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -32,6 +34,11 @@
         Delete {
             bindings = <&kp LA(DELETE)>;
             key-positions = <29 28>;
+        };
+
+        Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <32 33>;
         };
     };
 
@@ -69,11 +76,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-                           &kp ESC  &kp N1         &kp N2             &kp N3      &kp N4        &kp N5                                   &kp N6         &kp N7     &kp N8            &kp N9         &kp N0                         &kp F11
-                           &kp TAB   &kp Q          &kp W              &kp F       &kp P         &kp G                                    &kp J          &kp L      &kp U             &kp Y  &kp SEMICOLON                         &kp F12
- &mt LEFT_CONTROL LEFT_PARENTHESIS   &kp A          &kp R              &kp S       &kp T         &kp D                                    &kp H          &kp N      &kp E             &kp I          &kp O  &mt RIGHT_CONTROL SINGLE_QUOTE
-           &mt LEFT_ALT LEFT_BRACE   &kp Z          &kp X              &kp C       &kp V         &kp B  &kp C_MUTE  &kt LEFT_SHIFT        &kp K          &kp M  &kp COMMA           &kp DOT       &kp FSLH         &mt RIGHT_ALT BACKSLASH
-                                            &kp C_AC_BACK  &kp K_APPLICATION  &kp DELETE    &kp LSHIFT  &kp LEFT_GUI           &mo_tog 1 1  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp C_AC_FORWARD
+                           &kp ESC  &kp N1         &kp N2             &kp N3      &kp N4      &kp N5                                   &kp N6         &kp N7     &kp N8            &kp N9         &kp N0                         &kp F11
+                           &kp TAB   &kp Q          &kp W              &kp F       &kp P       &kp G                                    &kp J          &kp L      &kp U             &kp Y  &kp SEMICOLON                         &kp F12
+ &mt LEFT_CONTROL LEFT_PARENTHESIS   &kp A          &kp R              &kp S       &kp T       &kp D                                    &kp H          &kp N      &kp E             &kp I          &kp O  &mt RIGHT_CONTROL SINGLE_QUOTE
+           &mt LEFT_ALT LEFT_BRACE   &kp Z          &kp X              &kp C       &kp V       &kp B    &kp C_MUTE  &kt LEFT_SHIFT      &kp K          &kp M  &kp COMMA           &kp DOT       &kp FSLH         &mt RIGHT_ALT BACKSLASH
+                                            &kp C_AC_BACK  &kp K_APPLICATION  &kp DELETE  &kp LSHIFT  &kp LEFT_GUI     &mo_tog 1 1  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp C_AC_FORWARD
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT>;
@@ -96,7 +103,7 @@
                                                           &trans     &trans             &trans     &trans  &trans  &trans        &trans       &trans     &trans         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };

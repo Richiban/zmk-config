@@ -19,6 +19,8 @@
 
 
 
+
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -85,7 +87,7 @@
                                             &kp C_AC_BACK  &kp K_APPLICATION  &kp DELETE  &sk LSHIFT   &kp LEFT_GUI  &mo_tog 1 1  &kp SPACE  &kp BACKSPACE  &kp ENTER  &kp C_AC_FORWARD
             >;
 
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp RIGHT LEFT>;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LC(LEFT) LC(RIGHT)>;
         };
 
         lower_layer {
@@ -105,7 +107,7 @@
                                                           &trans     &trans             &trans     &trans  &trans  &trans        &trans       &trans     &trans         &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp RIGHT LEFT &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT) &inc_dec_kp PG_UP PG_DN>;
         };
     };
 };

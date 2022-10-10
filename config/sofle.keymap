@@ -24,6 +24,8 @@
 
 
 
+
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -66,6 +68,16 @@
         Down {
             bindings = <&kp DOWN>;
             key-positions = <45 46>;
+        };
+
+        Left_word {
+            bindings = <&kp LA(LEFT)>;
+            key-positions = <30 31>;
+        };
+
+        Right_word {
+            bindings = <&kp LA(RIGHT)>;
+            key-positions = <33 34>;
         };
     };
 

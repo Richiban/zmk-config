@@ -31,18 +31,25 @@
 
 
 
+
+
 / {
     combos {
         compatible = "zmk,combos";
 
         Undo {
             bindings = <&kp LG(Z)>;
-            key-positions = <14 15>;
+            key-positions = <15 14>;
         };
 
         Backspace {
             bindings = <&kp LA(BACKSPACE)>;
             key-positions = <20 21>;
+        };
+
+        Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <33 32>;
         };
     };
 

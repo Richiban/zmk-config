@@ -33,6 +33,8 @@
 
 
 
+
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -50,6 +52,36 @@
         Enter {
             bindings = <&kp ENTER>;
             key-positions = <33 32>;
+        };
+
+        Left_bracket {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <27 26>;
+        };
+
+        Right_braket {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <26 28>;
+        };
+
+        Left_brace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <14 15>;
+        };
+
+        Right_brace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <14 16>;
+        };
+
+        Left_square_bracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <38 39>;
+        };
+
+        Right_square_bracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <38 40>;
         };
     };
 
@@ -87,11 +119,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-                           &kp ESC  &kp N1         &kp N2             &kp N3      &kp N4      &kp N5                                &kp N6         &kp N7     &kp N8            &kp N9         &kp N0                         &kp F11
-                           &kp TAB   &kp Q          &kp W              &kp F       &kp P       &kp G                                 &kp J          &kp L      &kp U             &kp Y  &kp SEMICOLON                         &kp F12
- &mt LEFT_CONTROL LEFT_PARENTHESIS   &kp A          &kp R              &kp S       &kp T       &kp D                                 &kp H          &kp N      &kp E             &kp I          &kp O  &mt RIGHT_CONTROL SINGLE_QUOTE
-           &mt LEFT_ALT LEFT_BRACE   &kp Z          &kp X              &kp C       &kp V       &kp B    &kt LSHIFT   &kp K_MUTE      &kp K          &kp M  &kp COMMA           &kp DOT       &kp FSLH         &mt RIGHT_ALT BACKSLASH
-                                            &kp C_AC_BACK  &kp K_APPLICATION  &kp DELETE  &sk LSHIFT  &kp LEFT_GUI  &lt 1 ENTER  &kp SPACE  &kp BACKSPACE      &mo 2  &kp C_AC_FORWARD
+                           &kp ESC  &kp N1         &kp N2             &kp N3      &kp N4      &kp N5                               &kp N6         &kp N7     &kp N8            &kp N9         &kp N0                         &kp F11
+                           &kp TAB   &kp Q          &kp W              &kp F       &kp P       &kp G                                &kp J          &kp L      &kp U             &kp Y  &kp SEMICOLON                         &kp F12
+ &mt LEFT_CONTROL LEFT_PARENTHESIS   &kp A          &kp R              &kp S       &kp T       &kp D                                &kp H          &kp N      &kp E             &kp I          &kp O  &mt RIGHT_CONTROL SINGLE_QUOTE
+           &mt LEFT_ALT LEFT_BRACE   &kp Z          &kp X              &kp C       &kp V       &kp B    &kt LSHIFT  &kp K_MUTE      &kp K          &kp M  &kp COMMA           &kp DOT       &kp FSLH         &mt RIGHT_ALT BACKSLASH
+                                            &kp C_AC_BACK  &kp K_APPLICATION  &kp DELETE  &sk LSHIFT  &kp LEFT_GUI       &mo 1  &kp SPACE  &kp BACKSPACE      &mo 2  &kp C_AC_FORWARD
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LA(LEFT) LA(RIGHT)>;

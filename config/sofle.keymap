@@ -29,48 +29,20 @@
 
 
 
+
+
 / {
     combos {
         compatible = "zmk,combos";
 
         Undo {
             bindings = <&kp LG(Z)>;
-            key-positions = <13 14>;
+            key-positions = <14 15>;
         };
 
         Backspace {
             bindings = <&kp LA(BACKSPACE)>;
             key-positions = <20 21>;
-        };
-
-        Delete {
-            bindings = <&kp LA(DELETE)>;
-            key-positions = <21 22>;
-        };
-
-        Enter {
-            bindings = <&kp ENTER>;
-            key-positions = <47 46>;
-        };
-
-        Left {
-            bindings = <&kp LEFT>;
-            key-positions = <31 32>;
-        };
-
-        Right {
-            bindings = <&kp RIGHT>;
-            key-positions = <32 33>;
-        };
-
-        Up {
-            bindings = <&kp UP>;
-            key-positions = <19 20>;
-        };
-
-        Down {
-            bindings = <&kp DOWN>;
-            key-positions = <45 46>;
         };
     };
 

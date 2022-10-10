@@ -35,6 +35,8 @@
 
 
 
+
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -66,21 +68,11 @@
 
         Left_brace {
             bindings = <&kp LEFT_BRACE>;
-            key-positions = <14 15>;
+            key-positions = <38 39>;
         };
 
         Right_brace {
             bindings = <&kp RIGHT_BRACE>;
-            key-positions = <14 16>;
-        };
-
-        Left_square_bracket {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <38 39>;
-        };
-
-        Right_square_bracket {
-            bindings = <&kp RIGHT_BRACKET>;
             key-positions = <38 40>;
         };
     };

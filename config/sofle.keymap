@@ -121,7 +121,7 @@
 
             bindings = <
                         &kp C_SLEEP     &kp F1            &kp F2     &kp F3             &kp F4     &kp F5                        &kp F6       &kp F7     &kp F8         &kp F9        &kp F10  &kp F11
-                             &trans        &kp          &kp PIPE  &kp EQUAL     &kp UNDERSCORE     &trans                        &trans     &kp HOME     &kp UP        &kp END         &trans  &kp F12
+                             &trans     &trans          &kp PIPE  &kp EQUAL     &kp UNDERSCORE     &trans                        &trans     &kp HOME     &kp UP        &kp END         &trans  &kp F12
  &mt LEFT_CONTROL RIGHT_PARENTHESIS  &kp TILDE     &kp LESS_THAN  &kp MINUS   &kp GREATER_THAN  &kp GRAVE                  &kp LA(LEFT)     &kp LEFT   &kp DOWN      &kp RIGHT  &kp RA(RIGHT)   &trans
            &mt LEFT_ALT RIGHT_BRACE     &trans  &kp LEFT_BRACKET   &kp PLUS  &kp RIGHT_BRACKET     &trans  &trans  &trans   &bootloader  &kp PAGE_UP  &kp ENTER  &kp PAGE_DOWN         &trans   &trans
                                                           &trans     &trans             &trans     &trans  &trans  &trans        &trans       &trans     &trans         &trans

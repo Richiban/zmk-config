@@ -51,6 +51,13 @@
                 <&mo>,
                 <&kp>;
         };
+        sh_sp: behavior_shifted_key {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SHIFTED_KEY";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp UNDERSCORE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -68,11 +75,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-                           &kp ESC  &kp N1      &kp N2             &kp N3      &kp N4      &kp N5                                &kp N6         &kp N7     &kp N8         &kp N9         &kp N0                         &kp F11
-                           &kp TAB   &kp Q       &kp W              &kp F       &kp P       &kp G                                 &kp J          &kp L      &kp U          &kp Y  &kp SEMICOLON                         &kp F12
- &mt LEFT_CONTROL LEFT_PARENTHESIS   &kp A       &kp R              &kp S       &kp T       &kp D                                 &kp H          &kp N      &kp E          &kp I          &kp O  &mt RIGHT_CONTROL SINGLE_QUOTE
-           &mt LEFT_ALT LEFT_BRACE   &kp Z       &kp X              &kp C       &kp V       &kp B    &kt LSHIFT   &kp K_MUTE      &kp K          &kp M  &kp COMMA        &kp DOT       &kp FSLH         &mt RIGHT_ALT BACKSLASH
-                                            &kp K_BACK  &kp K_APPLICATION  &kp DELETE  &sk LSHIFT  &kp LEFT_GUI  &lh 1 ENTER  &kp SPACE  &kp BACKSPACE      &mo 2  &kp K_FORWARD
+                           &kp ESC  &kp N1      &kp N2             &kp N3      &kp N4      &kp N5                             &kp N6         &kp N7     &kp N8         &kp N9         &kp N0                         &kp F11
+                           &kp TAB   &kp Q       &kp W              &kp F       &kp P       &kp G                              &kp J          &kp L      &kp U          &kp Y  &kp SEMICOLON                         &kp F12
+ &mt LEFT_CONTROL LEFT_PARENTHESIS   &kp A       &kp R              &kp S       &kp T       &kp D                              &kp H          &kp N      &kp E          &kp I          &kp O  &mt RIGHT_CONTROL SINGLE_QUOTE
+           &mt LEFT_ALT LEFT_BRACE   &kp Z       &kp X              &kp C       &kp V       &kp B    &kt LSHIFT   &kp K_MUTE   &kp K          &kp M  &kp COMMA        &kp DOT       &kp FSLH         &mt RIGHT_ALT BACKSLASH
+                                            &kp K_BACK  &kp K_APPLICATION  &kp DELETE  &sk LSHIFT  &kp LEFT_GUI  &lh 1 ENTER  &sh_sp  &kp BACKSPACE      &mo 2  &kp K_FORWARD
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LA(LEFT) LA(RIGHT)>;

@@ -13,6 +13,8 @@
 
 
 
+
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -29,12 +31,12 @@
 
         For_combo {
             bindings = <&for_macro>;
-            key-positions = <14 25>;
+            key-positions = <15 26>;
         };
 
         Readonly_combo {
             bindings = <&readonly_macro>;
-            key-positions = <25 33>;
+            key-positions = <26 32>;
         };
 
         Public_combo {
@@ -45,6 +47,11 @@
         Private_combo {
             bindings = <&private_macro>;
             key-positions = <16 26>;
+        };
+
+        Class_combo {
+            bindings = <&class_macro>;
+            key-positions = <39 19>;
         };
     };
 

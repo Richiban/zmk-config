@@ -11,6 +11,8 @@
 
 #define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
 
+
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -23,6 +25,26 @@
         Backspace {
             bindings = <&kp LA(BACKSPACE)>;
             key-positions = <20 21>;
+        };
+
+        For_combo {
+            bindings = <&for_macro>;
+            key-positions = <14 25>;
+        };
+
+        Readonly_combo {
+            bindings = <&readonly_macro>;
+            key-positions = <25 33>;
+        };
+
+        Public_combo {
+            bindings = <&public_macro>;
+            key-positions = <16 19>;
+        };
+
+        Private_combo {
+            bindings = <&private_macro>;
+            key-positions = <16 26>;
         };
     };
 
@@ -54,31 +76,41 @@
             compatible = "zmk,behavior-macro";
             label = "for_macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp F &kp O &kp R>;
+            bindings =
+                <&macro_tap>,
+                <&kp F &kp O &kp R>;
         };
         public_macro: public_macro {
             compatible = "zmk,behavior-macro";
             label = "public_macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp P &kp U &kp B &kp L &kp I &kp C>;
+            bindings =
+                <&macro_tap>,
+                <&kp P &kp U &kp B &kp L &kp I &kp C>;
         };
         private_macro: private_macro {
             compatible = "zmk,behavior-macro";
             label = "private_macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp P &kp R &kp I &kp V &kp A &kp T &kp E>;
+            bindings =
+                <&macro_tap>,
+                <&kp P &kp R &kp I &kp V &kp A &kp T &kp E>;
         };
         class_macro: class_macro {
             compatible = "zmk,behavior-macro";
             label = "class_macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp C &kp L &kp A &kp S &kp S>;
+            bindings =
+                <&macro_tap>,
+                <&kp C &kp L &kp A &kp S &kp S>;
         };
         readonly_macro: readonly_macro {
             compatible = "zmk,behavior-macro";
             label = "readonly_macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap &kp R &kp E &kp A &kp D &kp O &kp N &kp L &kp Y>;
+            bindings =
+                <&macro_tap>,
+                <&kp R &kp E &kp A &kp D &kp O &kp N &kp L &kp Y>;
         };
     };
 

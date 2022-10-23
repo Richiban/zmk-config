@@ -41,6 +41,42 @@
             bindings = <&tog 5>;
             key-positions = <0 50 59 11>;
         };
+
+        Select_next_word_windows {
+            bindings = <&nww>;
+            key-positions = <47 46>;
+            layers = <2>;
+        };
+
+        Select_next_word_mac {
+            bindings = <&nwm>;
+            key-positions = <47 46>;
+            layers = <0>;
+        };
+
+        Select_prev_word_windows {
+            bindings = <&pww>;
+            key-positions = <46 45>;
+            layers = <2>;
+        };
+
+        Select_prev_word_mac {
+            bindings = <&pwm>;
+            key-positions = <46 45>;
+            layers = <0>;
+        };
+
+        Select_line_windows {
+            bindings = <&slw>;
+            key-positions = <45 47>;
+            layers = <2>;
+        };
+
+        Select_line_mac {
+            bindings = <&slm>;
+            key-positions = <45 47>;
+            layers = <0>;
+        };
     };
 
     behaviors {
@@ -111,6 +147,79 @@
                 <&macro_release>,
                 <&kp LALT>;
         };
+        
+        nww: select_next_word_windows {
+            label = "select_next_word_windows";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp RIGHT>
+                , <&macro_tap &kp LC(LS(RIGHT))>
+                ;
+        };
+        
+        pww: select_prev_word_windows {
+            label = "select_prev_word_windows";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp LEFT>
+                , <&macro_tap &kp LC(LS(LEFT))>
+                ;
+        };
+        
+        nwm: select_next_word_mac {
+            label = "select_next_word_mac";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp RIGHT>
+                , <&macro_tap &kp LA(LS(RIGHT))>
+                ;
+        };
+        
+        pwm: select_prev_word_mac {
+            label = "select_prev_word_mac";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp LEFT>
+                , <&macro_tap &kp LA(LS(LEFT))>
+                ;
+        };
+        
+        slw: select_line_windows {
+            label = "select_line_windows";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp HOME>
+                , <&macro_tap &kp LS(END)>
+                ;
+        };
+        
+        slm: select_line_mac {
+            label = "select_line_mac";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
+            bindings
+                = <&macro_tap &kp HOME>
+                , <&macro_tap &kp LS(LG(RIGHT))>
+                ;
+        };
+
     };
 
     keymap {
@@ -146,7 +255,7 @@
                         &kp TAB   &kp Q         &kp W              &kp F       &kp P        &kp G                                  &kp J          &kp L      &kp U          &kp Y  &kp SEMICOLON                      &kp F12
  &gqt LEFT_GUI LEFT_PARENTHESIS   &kp A         &kp R              &kp S       &kp T        &kp D                                  &kp H          &kp N      &kp E          &kp I          &kp O  &gqt RIGHT_GUI SINGLE_QUOTE
         &mt LEFT_ALT LEFT_BRACE   &kp Z         &kp X              &kp C       &kp V        &kp B        &kt LSHIFT   &kp K_MUTE   &kp K          &kp M  &kp COMMA        &kp DOT       &kp FSLH      &mt RIGHT_ALT BACKSLASH
-                                         &kp LG(LEFT)  &kp K_APPLICATION  &kp DELETE  &skq LSHIFT  &kp LEFT_CONTROL  &lh 3 ENTER  &sh_sp  &kp BACKSPACE      &mo 4  &kp LG(RIGHT)
+                                         &kp LG(LC(LEFT))  &kp K_APPLICATION  &kp DELETE  &skq LSHIFT  &kp LEFT_CONTROL  &lh 3 ENTER  &sh_sp  &kp BACKSPACE      &mo 4  &kp LG(LC(RIGHT))
             >;
 
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LC(LEFT) LC(RIGHT)>;

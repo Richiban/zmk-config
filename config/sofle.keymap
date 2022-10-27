@@ -245,7 +245,7 @@
                                                                       &trans     &trans                 &trans     &trans  &trans  &trans        &trans       &trans     &trans          &to 2
             >;
 
-            sensor-bindings = <&inc_dec_kp LA(LEFT) LA(RIGHT) &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp PG_UP PG_DN>;
         };
 
         windows_default_layer {
@@ -269,7 +269,7 @@
                                                     &trans     &trans                 &trans     &trans  &trans  &trans        &trans       &trans       &trans          &to 0
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(LEFT) LC(RIGHT) &inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp PG_UP PG_DN>;
         };
 
         function_layer {

@@ -45,7 +45,7 @@
         Normal_mode {
             bindings = <&norm>;
             key-positions = <47 46>;
-            layers = <0>;
+            layers = <>;
         };
     };
 
@@ -128,7 +128,8 @@
                 <&kp J>,
                 <&macro_tap>,
                 <&kp K>,
-                <&macro_release>;
+                <&macro_release>,
+                <&kp J>;
         };
     };
 

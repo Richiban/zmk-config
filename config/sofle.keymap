@@ -145,7 +145,7 @@
                                   &kp LC(LEFT)  &kp K_APPLICATION  &kp DELETE  &skq LSHIFT  &kp LEFT_GUI  &lh 1 ENTER  &sh_sp  &kp BACKSPACE      &mo 4  &kp LC(RIGHT)
             >;
 
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LA(LEFT) LA(RIGHT)>;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
         };
 
         mac_command_layer {
@@ -169,7 +169,7 @@
                                   &kp LG(LC(LEFT))  &kp K_APPLICATION  &kp DELETE  &skq LSHIFT  &kp LEFT_CONTROL  &lh 3 ENTER  &sh_sp  &kp BACKSPACE      &mo 4  &kp LG(LC(RIGHT))
             >;
 
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LC(LEFT) LC(RIGHT)>;
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
         };
 
         windows_command_layer {

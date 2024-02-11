@@ -10,12 +10,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-    sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <20>;
-    };
-
     combos {
         compatible = "zmk,combos";
 
@@ -46,12 +40,6 @@
         Lock {
             bindings = <&tog 5>;
             key-positions = <0 50 59 11>;
-        };
-
-        Normal_mode {
-            bindings = <&norm>;
-            key-positions = <47 46>;
-            layers = <>;
         };
     };
 
@@ -108,50 +96,17 @@
         };
     };
 
-    macros {
-        gbp: gbp {
-            label = "GBP";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N1 &kp KP_N6 &kp KP_N3>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-        norm: enter_normal_mode {
-            label = "enter_normal_mode";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
-            bindings =
-                <&macro_press>,
-                <&kp J>,
-                <&macro_tap>,
-                <&kp K>,
-                <&macro_release>,
-                <&kp J>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         mac_default_layer {
             bindings = <
-               &kp GRAVE  &kp N1        &kp N2             &kp N3      &kp N4       &kp N5                             &kp N6         &kp N7     &kp N8         &kp N9         &kp N0                          &kp F11
-                 &kp TAB   &kp Q         &kp W              &kp F       &kp P        &kp G                              &kp J          &kp L      &kp U          &kp Y  &kp SEMICOLON                          &kp F12
-   &gqt LEFT_CONTROL ESC   &kp A         &kp R              &kp S       &kp T        &kp D                              &kp H          &kp N      &kp E          &kp I          &kp O  &gqt RIGHT_CONTROL SINGLE_QUOTE
- &mt LEFT_ALT LEFT_BRACE   &kp Z         &kp X              &kp C       &kp V        &kp B    &kt LSHIFT   &kp K_MUTE   &kp K          &kp M  &kp COMMA        &kp DOT       &kp FSLH          &mt RIGHT_ALT BACKSLASH
-                                  &kp LC(LEFT)  &kp K_APPLICATION  &kp DELETE  &skq LSHIFT  &kp LEFT_GUI  &lh 1 ENTER  &sh_sp  &kp BACKSPACE      &mo 4  &kp LC(RIGHT)
+               &kp GRAVE             &kp N1      &kp N2       &kp N3        &kp N4       &kp N5        &kp N6         &kp N7     &kp N8         &kp N9         &kp N0                          &kp F11
+                 &kp TAB              &kp Q       &kp W        &kp F         &kp P        &kp G         &kp J          &kp L      &kp U          &kp Y  &kp SEMICOLON                          &kp F12
+   &gqt LEFT_CONTROL ESC              &kp A       &kp R        &kp S         &kp T        &kp D         &kp H          &kp N      &kp E          &kp I          &kp O  &gqt RIGHT_CONTROL SINGLE_QUOTE
+ &mt LEFT_ALT LEFT_BRACE              &kp Z       &kp X        &kp C         &kp V        &kp B         &kp K          &kp M  &kp COMMA        &kp DOT       &kp FSLH          &mt RIGHT_ALT BACKSLASH
+            &kp LC(LEFT)  &kp K_APPLICATION  &kp DELETE  &skq LSHIFT  &kp LEFT_GUI       &trans        &trans    &lh 1 ENTER     &sh_sp  &kp BACKSPACE          &mo 4                    &kp LC(RIGHT)
             >;
-
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
         };
 
         mac_command_layer {
@@ -162,8 +117,6 @@
             &mt LEFT_ALT RIGHT_BRACE            &trans      &kp LEFT_BRACKET   &kp PLUS      &kp RIGHT_BRACKET     &trans  &trans  &trans   &bootloader  &kp PAGE_UP  &kp ENTER  &kp PAGE_DOWN         &trans   &trans
                                                                       &trans     &trans                 &trans     &trans  &trans  &trans        &trans       &trans     &trans          &to 2
             >;
-
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp PG_UP PG_DN>;
         };
 
         windows_default_layer {
@@ -174,20 +127,16 @@
  &mt LEFT_ALT LEFT_BRACE   &kp Z             &kp X              &kp C       &kp V        &kp B        &kt LSHIFT   &kp K_MUTE   &kp K          &kp M  &kp COMMA            &kp DOT       &kp FSLH      &mt RIGHT_ALT BACKSLASH
                                   &kp LG(LC(LEFT))  &kp K_APPLICATION  &kp DELETE  &skq LSHIFT  &kp LEFT_CONTROL  &lh 3 ENTER  &sh_sp  &kp BACKSPACE      &mo 4  &kp LG(LC(RIGHT))
             >;
-
-            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
         };
 
         windows_command_layer {
             bindings = <
                     &trans    &kp F1                &kp F2     &kp F3                 &kp F4     &kp F5                        &kp F6       &kp F7       &kp F8         &kp F9        &kp F10  &kp F11
-                    &trans      &gbp  &kp LEFT_PARENTHESIS  &kp EQUAL  &kp RIGHT_PARENTHESIS     &trans                        &trans     &kp HOME       &kp UP        &kp END         &trans  &kp F12
+                    &trans    &trans  &kp LEFT_PARENTHESIS  &kp EQUAL  &kp RIGHT_PARENTHESIS     &trans                        &trans     &kp HOME       &kp UP        &kp END         &trans  &kp F12
  &mt LEFT_CONTROL LEFT_WIN  &kp PIPE         &kp LESS_THAN  &kp MINUS       &kp GREATER_THAN  &kp TILDE                  &kp LC(LEFT)     &kp LEFT     &kp DOWN      &kp RIGHT  &kp LC(RIGHT)   &trans
   &mt LEFT_ALT RIGHT_BRACE    &trans      &kp LEFT_BRACKET   &kp PLUS      &kp RIGHT_BRACKET     &trans  &trans  &trans   &bootloader  &kp PAGE_UP  &key_repeat  &kp PAGE_DOWN         &trans   &trans
                                                     &trans     &trans                 &trans     &trans  &trans  &trans        &trans       &trans       &trans          &to 0
             >;
-
-            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp PG_UP PG_DN>;
         };
 
         function_layer {
@@ -210,16 +159,4 @@
             >;
         };
     };
-};
-
-&left_encoder {
-    steps = <80>; // set this to be 4x triggers-per-rotation first
-                  // and then if that doesn't trigger one press per detent,
-                  // try 2x or 1x.
-};
-
-&right_encoder {
-    steps = <80>; // set this to be 4x triggers-per-rotation first
-                  // and then if that doesn't trigger one press per detent,
-                  // try 2x or 1x.
 };

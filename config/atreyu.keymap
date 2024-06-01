@@ -36,11 +36,6 @@
             key-positions = <20 21>;
             layers = <2 3>;
         };
-
-        Lock {
-            bindings = <&tog 5>;
-            key-positions = <0 50 59 11>;
-        };
     };
 
     behaviors {
@@ -107,6 +102,8 @@
  &mt LEFT_ALT LEFT_BRACE              &kp Z       &kp X        &kp C         &kp V        &kp B         &kp K          &kp M  &kp COMMA        &kp DOT       &kp FSLH          &mt RIGHT_ALT BACKSLASH
             &kp LC(LEFT)  &kp K_APPLICATION  &kp DELETE  &skq LSHIFT  &kp LEFT_GUI       &trans        &trans    &lh 1 ENTER     &sh_sp  &kp BACKSPACE          &mo 4                    &kp LC(RIGHT)
             >;
+
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
         };
 
         mac_command_layer {
@@ -117,6 +114,8 @@
             &mt LEFT_ALT RIGHT_BRACE            &trans      &kp LEFT_BRACKET   &kp PLUS      &kp RIGHT_BRACKET     &trans  &trans  &trans   &bootloader  &kp PAGE_UP  &kp ENTER  &kp PAGE_DOWN         &trans   &trans
                                                                       &trans     &trans                 &trans     &trans  &trans  &trans        &trans       &trans     &trans          &to 2
             >;
+
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp PG_UP PG_DN>;
         };
 
         windows_default_layer {
@@ -127,6 +126,8 @@
  &mt LEFT_ALT LEFT_BRACE   &kp Z             &kp X              &kp C       &kp V        &kp B        &kt LSHIFT   &kp K_MUTE   &kp K          &kp M  &kp COMMA            &kp DOT       &kp FSLH      &mt RIGHT_ALT BACKSLASH
                                   &kp LG(LC(LEFT))  &kp K_APPLICATION  &kp DELETE  &skq LSHIFT  &kp LEFT_CONTROL  &lh 3 ENTER  &sh_sp  &kp BACKSPACE      &mo 4  &kp LG(LC(RIGHT))
             >;
+
+            sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
         };
 
         windows_command_layer {
@@ -137,6 +138,8 @@
   &mt LEFT_ALT RIGHT_BRACE    &trans      &kp LEFT_BRACKET   &kp PLUS      &kp RIGHT_BRACKET     &trans  &trans  &trans   &bootloader  &kp PAGE_UP  &key_repeat  &kp PAGE_DOWN         &trans   &trans
                                                     &trans     &trans                 &trans     &trans  &trans  &trans        &trans       &trans       &trans          &to 0
             >;
+            
+            sensor-bindings = <&inc_dec_kp LEFT RIGHT &inc_dec_kp PG_UP PG_DN>;
         };
 
         function_layer {
@@ -148,15 +151,17 @@
                              &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
-
-        lock_layer {
-            bindings = <
-  &none   &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
-  &none   &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
-  &none   &none   &none   &none   &none   &none                   &none   &none   &none   &none   &none   &none
-  &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
-                  &none   &none   &none   &none   &none   &none   &none   &none   &none   &none
-            >;
-        };
     };
+};
+
+&left_encoder {
+    steps = <80>; // set this to be 4x triggers-per-rotation first
+                  // and then if that doesn't trigger one press per detent,
+                  // try 2x or 1x.
+};
+
+&right_encoder {
+    steps = <80>; // set this to be 4x triggers-per-rotation first
+                  // and then if that doesn't trigger one press per detent,
+                  // try 2x or 1x.
 };
